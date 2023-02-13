@@ -18,7 +18,7 @@ TERMUX_NDK_VERSION=$TERMUX_NDK_VERSION_NUM$TERMUX_NDK_REVISION
 # and update SHA256 sums in scripts/setup-android-sdk.sh
 # check all packages build and run correctly and bump if needed
 
-: "${TERMUX_JAVA_HOME:=/usr/lib/jvm/java-8-openjdk-amd64}"
+: "${TERMUX_JAVA_HOME:=/usr/lib/jvm/adoptopenjdk-8-hotspot-amd64}"
 export JAVA_HOME=${TERMUX_JAVA_HOME}
 
 if [ "${TERMUX_PACKAGES_OFFLINE-false}" = "true" ]; then
@@ -30,8 +30,8 @@ else
 fi
 
 # Termux packages configuration.
-TERMUX_APP_PACKAGE="com.termux"
-TERMUX_BASE_DIR="/data/data/${TERMUX_APP_PACKAGE}/files"
+TERMUX_APP_PACKAGE="com.termdo"
+TERMUX_BASE_DIR="/data/data/${TERMUX_APP_PACKAGE}/files/termdo"
 TERMUX_CACHE_DIR="/data/data/${TERMUX_APP_PACKAGE}/cache"
 TERMUX_ANDROID_HOME="${TERMUX_BASE_DIR}/home"
 TERMUX_APPS_DIR="${TERMUX_BASE_DIR}/apps"
@@ -40,7 +40,7 @@ TERMUX_PREFIX="${TERMUX_BASE_DIR}/usr"
 # Package name for the packages hosted on the repo.
 # This must only equal TERMUX_APP_PACKAGE if using custom repo that
 # has packages that were built with same package name.
-TERMUX_REPO_PACKAGE="com.termux"
+TERMUX_REPO_PACKAGE="com.termdo"
 
 # Termux repo urls.
 TERMUX_REPO_URL=(
