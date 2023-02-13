@@ -5,7 +5,7 @@
 
 `./scripts/run-docker.sh`
 
-`./scripts/build-bootstraps.sh -f  --architectures aarch64 &> build.log`
+`./scripts/build-bootstraps.sh -f  --architectures aarch64 -a neofetch`
 
 建立25c软连接
 
