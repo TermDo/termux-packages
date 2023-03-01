@@ -491,53 +491,57 @@ main() {
 		EXTRACTED_PACKAGES=()
 
 		# Package manager.
-		if ! ${BOOTSTRAP_ANDROID10_COMPATIBLE}; then
-			PACKAGES+=("apt")
-			PACKAGES+=("${TERMUX_PACKAGE_MANAGER}")
-		fi
+		# if ! ${BOOTSTRAP_ANDROID10_COMPATIBLE}; then
+		# 	PACKAGES+=("apt")
+		# 	PACKAGES+=("${TERMUX_PACKAGE_MANAGER}")
+		# fi
 
 		# Core utilities.
-		PACKAGES+=("bash")
-		PACKAGES+=("bzip2")
-		PACKAGES+=("proot")
-		# 删掉了报错的command not found
-		PACKAGES+=("coreutils")
-		PACKAGES+=("curl")
-		PACKAGES+=("dash")
-		PACKAGES+=("diffutils")
-		PACKAGES+=("findutils")
-		PACKAGES+=("gawk")
-		PACKAGES+=("grep")
-		PACKAGES+=("gzip")
-		PACKAGES+=("less")
-		PACKAGES+=("procps")
-		PACKAGES+=("psmisc")
-		PACKAGES+=("sed")
-		PACKAGES+=("tar")
-		PACKAGES+=("termux-exec")
-		PACKAGES+=("termux-keyring")
-		if [ ${TERMUX_PACKAGE_MANAGER} = "apt" ]; then
-			PACKAGES+=("termux-keyring")
-		fi
-		PACKAGES+=("termux-tools")
-		PACKAGES+=("util-linux")
-		PACKAGES+=("xz-utils")
 
-		# Additional.
-		PACKAGES+=("ed")
-		PACKAGES+=("debianutils")
-		if [ ${TERMUX_PACKAGE_MANAGER} = "apt" ]; then
-			PACKAGES+=("debianutils")
-		fi
-		PACKAGES+=("dos2unix")
-		PACKAGES+=("inetutils")
-		PACKAGES+=("lsof")
-		PACKAGES+=("neofetch")
-		# 删掉了报错的nano 改成neovim
-		PACKAGES+=("neovim")
-		PACKAGES+=("net-tools")
-		PACKAGES+=("patch")
-		PACKAGES+=("unzip")
+		PACKAGES+=("proot-distro")
+
+		PACKAGES+=("tsu")
+		PACKAGES+=("docker")
+		# PACKAGES+=("bzip2")
+		# PACKAGES+=("proot")
+		# # 删掉了报错的command not found
+		# PACKAGES+=("coreutils")
+		# PACKAGES+=("curl")
+		# PACKAGES+=("dash")
+		# PACKAGES+=("diffutils")
+		# PACKAGES+=("findutils")
+		# PACKAGES+=("gawk")
+		# PACKAGES+=("grep")
+		# PACKAGES+=("gzip")
+		# PACKAGES+=("less")
+		# PACKAGES+=("procps")
+		# PACKAGES+=("psmisc")
+		# PACKAGES+=("sed")
+		# PACKAGES+=("tar")
+		# PACKAGES+=("termux-exec")
+		# PACKAGES+=("termux-keyring")
+		# if [ ${TERMUX_PACKAGE_MANAGER} = "apt" ]; then
+		# 	PACKAGES+=("termux-keyring")
+		# fi
+		# PACKAGES+=("termux-tools")
+		# PACKAGES+=("util-linux")
+		# PACKAGES+=("xz-utils")
+
+		# # Additional.
+		# PACKAGES+=("ed")
+		# PACKAGES+=("debianutils")
+		# if [ ${TERMUX_PACKAGE_MANAGER} = "apt" ]; then
+		# 	PACKAGES+=("debianutils")
+		# fi
+		# PACKAGES+=("dos2unix")
+		# PACKAGES+=("inetutils")
+		# PACKAGES+=("lsof")
+		# PACKAGES+=("neofetch")
+		# # 删掉了报错的nano 改成neovim
+		# PACKAGES+=("neovim")
+		# PACKAGES+=("net-tools")
+		# PACKAGES+=("patch")
+		# PACKAGES+=("unzip")
 		# Handle additional packages.
 		for add_pkg in "${ADDITIONAL_PACKAGES[@]}"; do
 			if [[ " ${PACKAGES[*]} " != *" $add_pkg "* ]]; then
